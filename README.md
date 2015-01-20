@@ -6,9 +6,11 @@ Ruby and Node. A Dockerfile building upon this image might look like this:
 
 ```dockerfile
 FROM noonat/ruby-node
+
 COPY Gemfile /opt/src/Gemfile
 COPY Gemfile.lock /opt/src/Gemfile.lock
 COPY package.json /opt/src/package.json
+
 WORKDIR /opt/src
 RUN bundle install && \
     npm install
@@ -17,7 +19,7 @@ RUN bundle install && \
 Ruby 2.2.0 (and bundler) are installed via [rbenv] and [ruby-build]. I've also
 included the [rbenv-gem-rehash] plugin..
 
-Node 0.11.9 installed via [nodenv] and [node-build]. If you `npm install -g`,
+Node 0.10.33 installed via [nodenv] and [node-build]. If you `npm install -g`,
 be sure to `RUN nodenv rehash` to create shims for any scripts installed by NPM.
 
 
