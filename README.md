@@ -43,4 +43,4 @@ If you require a different version of Ruby or Node, you may want to check out
 [rbenv-gem-rehash]: https://github.com/sstephenson/rbenv-gem-rehash
 [nodenv]: https://github.com/OiNutter/nodenv
 [node-build]: https://github.com/OiNutter/node-build
-[noonat/rbenv-nodenv]:
+[noonat/rbenv-nodenv]: https://registry.hub.docker.com/u/noonat/rbenv-nodenv
