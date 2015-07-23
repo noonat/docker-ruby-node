@@ -1,12 +1,14 @@
 FROM noonat/rbenv-nodenv
 MAINTAINER Nathan Ostgard <noonat@phuce.com>
 
-RUN rbenv install 2.2.0 && \
-    CONFIGURE_OPTS="--disable-install-doc" rbenv global 2.2.0 && \
+ENV RUBY_VERSION=2.2.2 NODE_VERSION=0.12.7
+
+RUN rbenv install $RUBY_VERSION && \
+    CONFIGURE_OPTS="--disable-install-doc" rbenv global $RUBY_VERSION && \
     gem install bundler
 
-RUN nodenv install 0.10.33 && \
-    nodenv global 0.10.33 && \
+RUN nodenv install $NODE_VERSION && \
+    nodenv global $NODE_VERSION && \
     nodenv rehash
 
 CMD ["/bin/bash"]
